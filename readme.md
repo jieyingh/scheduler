@@ -11,7 +11,7 @@ Install python 3.10 or newer, and then install django by running
 python -m pip install Django
 ```
 
-Once the django python module is installed, you can open a terminal to the root of the django project, which is the `shift-scheduler-be` folder.
+Once the django python module is installed, you can open a terminal to the root of the django project, which is the `server` folder.
 There, you can run
 
 ```bash
@@ -22,7 +22,7 @@ to start the back-end development server.
 
 ## Starting the front-end
 
-Install node.js 18.17 or newer, and then open a terminal to the root of the next.js project, which is the `shift-scheduler-fe` folder.
+Install node.js 18.17 or newer, and then open a terminal to the root of the next.js project, which is the `client` folder.
 There, you can run
 
 ```bash
