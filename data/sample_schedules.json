@@ -1,0 +1,97 @@
+{
+  "persons": [
+    {
+      "P000000": "Shuaib R",
+      "P000001": "Test 1",
+      "P000002": "Test 2",
+      "P000003": "Test 3",
+      "P000004": "T4"
+    }
+  ],
+  "schedules": [
+    {
+      "key": "1",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "crowd_control",
+      "tag": "events_210",
+      "assignees": [""],
+      "overlaps": [""],
+      "name": "Event Room 210",
+      "color": "#ff99e6"
+    },
+    {
+      "key": "2",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "crowd_control",
+      "tag": "events_210",
+      "assignees": [""],
+      "overlaps": [""],
+      "name": "Event Room 210",
+      "color": "#ff99e6"
+    },
+    {
+      "key": "3",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "crowd_control",
+      "tag": "events_210",
+      "assignees": [""],
+      "overlaps": [""],
+      "name": "Event Room 210",
+      "color": "#ff99e6"
+    },
+    {
+      "key": "4",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "crowd_control",
+      "tag": "events_210",
+      "assignees": [""],
+      "overlaps": [""],
+      "name": "Event Room 210",
+      "color": "#ff99e6"
+    },
+    {
+      "key": "5",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "crowd_control",
+      "tag": "events_210",
+      "assignees": [""],
+      "overlaps": [""],
+      "name": "Event Room 210",
+      "color": "#ff99e6"
+    },
+    {
+      "key": "5",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "crowd_control",
+      "tag": "events_710",
+      "assignees": ["P126094"],
+      "overlaps": [""],
+      "name": "Event Room 710",
+      "color": "#ff99e6"
+    },
+    {
+      "key": "6",
+      "start_time": "2024-01-13T15:00:00.000Z",
+      "end_time": "2024-01-13T15:00:00.000Z",
+      "buffer_end_time": "2024-01-13T15:00:00.000Z",
+      "category": "incident_response",
+      "tag": "zone_1",
+      "assignees": ["P126094"],
+      "overlaps": [""],
+      "name": "Zone 1",
+      "color": "#93b8f5"
+    }
+  ]
+}

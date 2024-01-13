@@ -1,5 +1,5 @@
 """
-ASGI config for shift_scheduler_be project.
+ASGI config for scheduler_manager_server project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shift_scheduler_be.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'scheduler_manager_server.settings')
 
 application = get_asgi_application()

@@ -1,38 +1,29 @@
 # Event Shift Scheduler
 
-This is a simple app designed to generate and manage employee shifts (for an event or otherwise).
-It uses `django` for the backend and `react` for the front-end (via next.js).
+This is a simple project designed to generate and manage employee shifts (for an event or otherwise).
 
-## Starting the backend
+It has three services that interact with each other in order to make this happen:
 
-Install python 3.10 or newer, and then install django by running
+- Form Portal
 
-```bash
-python -m pip install Django
-```
+- Schedule Manager Portal
 
-Once the django python module is installed, you can open a terminal to the root of the django project, which is the `server` folder.
-There, you can run
+- the third will be named later.
 
-```bash
-python manage.py runserver
-```
+Descriptions for each service is available in its respective section below. 
 
-to start the back-end development server.
+## Form Portal
 
-## Starting the front-end
+The Form Portal provides an interface for staff members to input their availabilities and preferences.
 
-Install node.js 18.17 or newer, and then open a terminal to the root of the next.js project, which is the `client` folder.
-There, you can run
+These preferences will be taken into account when creating the schedule, and the algorithm will try to accomodate as many people's preferences as possible.
 
-```bash
-npm i
-```
+## Schedule Manager Portal
 
-to install the dependencies. Once that's done, run
+The Schedule Manager portal provides an interface for administrators to view generated schedules and modify them, invoking re-generations as necessary, or manually editing schedules if needed.
 
-```bash
-npm run dev
-```
+## Third Thing
 
-to start the front-end development server.
+The Third Thing is the algorithm that generates the schedules based on the staff preferences. 
+
+It cannot be directly interfaced. However, it will respond to modifications made in the Schedule Manager Portal, re-generating schedules on request.
