@@ -6,9 +6,11 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import {MouseEvent, ReactNode, useState} from 'react';
+import { useTranslation } from 'react-i18next';
 import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 
 export default function Form() {
+  const { t } = useTranslation();
   const [friends, setFriends] = useState<string[]>([]);
   const [rows, setRows] = useState<ReactNode[]>([]);
   const [submitFormOpen, setSubmitFormOpen] = useState(false);
@@ -71,13 +73,13 @@ export default function Form() {
         <div className="w-full max-w-screen-md flex flex-col gap-8 p-8 text-emerald-600">
           {/* TITLE SECTION */}
           <h1 className="text-4xl font-semibold">
-            Public Safety Staff Preferences form
+            {t('formTitle')}
           </h1>
 
           {/* IDENTIFICATION SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              Identification
+              {t('identificationTitle')}
             </h2>
             <TextField
               label="Staff ID"
@@ -94,7 +96,7 @@ export default function Form() {
           {/* AVAILABILITIES SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              Availabilities
+              {t('availabilitiesTitle')}
             </h2>
             {/* Availabilities grid goes here */}
           </div>

@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import {ToggleButtonGroup, ToggleButton} from "@mui/material";
 import {MouseEvent, useState} from "react";
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
   const [lang, setLang] = useState("en");
+  const { i18n } = useTranslation();
 
   const handleLangChange = (event: MouseEvent, newLang: string) => {
     setLang(newLang);
+    i18n.changeLanguage(newLang);
   }
 
   return (
