@@ -6,7 +6,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import {MouseEvent, ReactNode, useState} from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from "@mui/material";
 
 export default function Form() {
@@ -29,10 +29,10 @@ export default function Form() {
       newRows.push(
         <div key={i}>
           <TextField
-            label="Staff ID"
+            label={t ('staffID')}
             variant="outlined"
             placeholder="P123456"
-            helperText="Please input your friend's staff ID as it appears in the staff portal"
+            helperText={t("staffIDHelper")}
             fullWidth
             InputProps={{
               sx: {borderRadius: '8px'},
@@ -82,10 +82,10 @@ export default function Form() {
               {t('identificationTitle')}
             </h2>
             <TextField
-              label="Staff ID"
+              label={t ('staffID')}
               variant="outlined"
               placeholder="P123456"
-              helperText="Please input your staff ID as it appears in the staff portal"
+              helperText={t ('staffIDHelper')}
               fullWidth
               InputProps={{
                 sx: {borderRadius: '8px'},
@@ -104,16 +104,15 @@ export default function Form() {
           {/* FRIENDS SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              Friends
+              {t ('friendsTitle')}
             </h2>
             <span>
-            If there are any friends you would like to work with, you may indicate as such here by clicking the
-              &apos;Add Friend&apos; button. As much as possible, we will try to schedule you and your friends together!
+            {t('friendsText')}
           </span>
             {rows}
             <span>
             <Button variant="outlined" onClick={addFriend}>
-              Add Friend
+              {t ('addFriendButton')}
             </Button>
           </span>
           </div>
@@ -121,44 +120,43 @@ export default function Form() {
           {/* TASKS SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              Task Preferences
+              {t ("taskPrefTitle")}
             </h2>
             <span>
-            If there are any restrictions you want the scheduling team to be aware of, please write them here. We will try our best to accomodate you!
+              {t ("taskPrefText")}
           </span>
             <FormGroup>
-              <FormControlLabel control={<Checkbox defaultChecked/>} label="Portals"/>
-              <FormControlLabel control={<Checkbox defaultChecked/>} label="Exhibition Hall"/>
-              <FormControlLabel control={<Checkbox defaultChecked/>} label="Patrolling"/>
-              <FormControlLabel control={<Checkbox defaultChecked/>} label="Events"/>
-              <FormControlLabel control={<Checkbox defaultChecked/>} label="Registration"/>
-            </FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('portalsLabel')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('exhibitionHallLabel')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('patrollingLabel')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('eventsLabel')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('registrationLabel')} />            </FormGroup>
           </div>
 
           {/* GENERAL SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              Other Requests (optional)
+              {t ("otherReqsTitle")}
             </h2>
             <div className="flex flex-col gap-8 w-full">
               <div className="w-full flex flex-col gap-2">
               <span>
-                If there are any restrictions you want the scheduling team to be aware of, please write them here. We will try our best to accomodate you!
+                {t ('otherReqsText')}
               </span>
                 <TextField
-                  label="Other restrictions"
-                  placeholder="Placeholder"
+                  label={t("otherReqsTextFieldLabel")}
+                  placeholder={t("otherReqsTextFieldPlaceholder")}
                   fullWidth
                   multiline
                 />
               </div>
               <div className="w-full flex flex-col gap-2">
               <span>
-                If there are any comments you want the scheduling team to consider, please write them here!
+                {t("generalCommentsText")}
               </span>
                 <TextField
-                  label="General comments"
-                  placeholder="Placeholder"
+                  label={t ("generalCommentsTextFieldLabel")}
+                  placeholder={t ("generalCommentsTextFieldPlaceholder")}
                   fullWidth
                   multiline
                 />
@@ -169,7 +167,7 @@ export default function Form() {
           {/* SUBMIT CONTROLS */}
           <span className="w-full flex flex-row-reverse">
             <Button variant="outlined" onClick={onSubmitClick}>
-              Submit
+              { t ('submitButton')}
             </Button>
           </span>
         </div>
@@ -178,28 +176,24 @@ export default function Form() {
       <Dialog
         open={submitFormOpen}
       >
-        <DialogTitle>Submit</DialogTitle>
+        <DialogTitle>{ t ('submitButton')}</DialogTitle>
         <DialogContent className="text-emerald-600 flex flex-col gap-4">
           <span>
-            Once you submit your form, the answers can no longer be edited.
-          </span>
-
-          <span>
-            If you would like to be emailed a copy of your form responses, you may write it here.
+              <Trans i18nKey = "submitConfirmationPopUpText"/>
           </span>
           <TextField
             autoFocus
             margin="dense"
             name="email"
-            label="Email Address (optional)"
+            label={t ('emailOptionalTextFieldLabel')}
             type="email"
             fullWidth
             variant="outlined"
           />
         </DialogContent>
         <DialogActions>
-          <Button variant="outlined" onClick={onCancelClick}>Cancel</Button>
-          <Button variant="outlined" onClick={onSubmit}>Subscribe</Button>
+          <Button variant="outlined" onClick={onCancelClick}>{t ("cancelButton")}</Button>
+          <Button variant="outlined" onClick={onSubmit}>{t ('subscribeButton')}</Button>
         </DialogActions>
       </Dialog>
     </>
