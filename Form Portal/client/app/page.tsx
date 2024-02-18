@@ -4,7 +4,7 @@ import Header from './Header'
 import Form from './Form'
 import Footer from './Footer'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import '../i18n';
+import '../i18n/i18n';
 
 export default function Home() {
 
