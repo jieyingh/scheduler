@@ -29,10 +29,10 @@ export default function Form() {
       newRows.push(
         <div key={i}>
           <TextField
-            label={t ('staffID')}
+            label={t ('label.staffID')}
             variant="outlined"
             placeholder="P123456"
-            helperText={t("staffIDHelper")}
+            helperText={t("text.staffIDHelper")}
             fullWidth
             InputProps={{
               sx: {borderRadius: '8px'},
@@ -73,19 +73,19 @@ export default function Form() {
         <div className="w-full max-w-screen-md flex flex-col gap-8 p-8 text-emerald-600">
           {/* TITLE SECTION */}
           <h1 className="text-4xl font-semibold">
-            {t('formTitle')}
+            {t("title.form")}
           </h1>
 
           {/* IDENTIFICATION SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              {t('identificationTitle')}
+              {t('title.identification')}
             </h2>
             <TextField
-              label={t ('staffID')}
+              label={t ('label.staffID')}
               variant="outlined"
               placeholder="P123456"
-              helperText={t ('staffIDHelper')}
+              helperText={t ('text.staffIDHelper')}
               fullWidth
               InputProps={{
                 sx: {borderRadius: '8px'},
@@ -96,7 +96,7 @@ export default function Form() {
           {/* AVAILABILITIES SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              {t('availabilitiesTitle')}
+              {t('title.availabilities')}
             </h2>
             {/* Availabilities grid goes here */}
           </div>
@@ -104,15 +104,15 @@ export default function Form() {
           {/* FRIENDS SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              {t ('friendsTitle')}
+              {t ('title.friends')}
             </h2>
             <span>
-            {t('friendsText')}
+            {t('text.friends')}
           </span>
             {rows}
             <span>
             <Button variant="outlined" onClick={addFriend}>
-              {t ('addFriendButton')}
+              {t ('button.addFriend')}
             </Button>
           </span>
           </div>
@@ -120,43 +120,43 @@ export default function Form() {
           {/* TASKS SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              {t ("taskPrefTitle")}
+              {t ("title.taskPref")}
             </h2>
             <span>
-              {t ("taskPrefText")}
+              {t ("text.taskPref")}
           </span>
             <FormGroup>
-            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('portalsLabel')} />
-            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('exhibitionHallLabel')} />
-            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('patrollingLabel')} />
-            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('eventsLabel')} />
-            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('registrationLabel')} />            </FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.portals')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.exhibitionHall')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.patrolling')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.events')} />
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.registration')} />            </FormGroup>
           </div>
 
           {/* GENERAL SECTION */}
           <div className="bg-white w-full h-full- rounded-3xl shadow-xl px-8 py-4 flex flex-col gap-4">
             <h2 className="text-2xl">
-              {t ("otherReqsTitle")}
+              {t ("title.otherReqs")}
             </h2>
             <div className="flex flex-col gap-8 w-full">
               <div className="w-full flex flex-col gap-2">
               <span>
-                {t ('otherReqsText')}
+                {t ('text.otherReqs')}
               </span>
                 <TextField
-                  label={t("otherReqsTextFieldLabel")}
-                  placeholder={t("otherReqsTextFieldPlaceholder")}
+                  label={t("label.otherReqsTextField")}
+                  placeholder={t("placeholder.otherReqsTextField")}
                   fullWidth
                   multiline
                 />
               </div>
               <div className="w-full flex flex-col gap-2">
               <span>
-                {t("generalCommentsText")}
+                {t("text.generalComments")}
               </span>
                 <TextField
-                  label={t ("generalCommentsTextFieldLabel")}
-                  placeholder={t ("generalCommentsTextFieldPlaceholder")}
+                  label={t ("label.generalCommentsTextField")}
+                  placeholder={t ("placeholder.generalCommentsTextField")}
                   fullWidth
                   multiline
                 />
@@ -167,7 +167,7 @@ export default function Form() {
           {/* SUBMIT CONTROLS */}
           <span className="w-full flex flex-row-reverse">
             <Button variant="outlined" onClick={onSubmitClick}>
-              { t ('submitButton')}
+              { t ('button.submit')}
             </Button>
           </span>
         </div>
@@ -176,24 +176,24 @@ export default function Form() {
       <Dialog
         open={submitFormOpen}
       >
-        <DialogTitle>{ t ('submitButton')}</DialogTitle>
+        <DialogTitle>{ t ('button.submit')}</DialogTitle>
         <DialogContent className="text-emerald-600 flex flex-col gap-4">
           <span>
-              <Trans i18nKey = "submitConfirmationPopUpText"/>
+              <Trans i18nKey = "text.submitConfirmationPopUp"/>
           </span>
           <TextField
             autoFocus
             margin="dense"
             name="email"
-            label={t ('emailOptionalTextFieldLabel')}
+            label={t ('label.emailOptionalTextField')}
             type="email"
             fullWidth
             variant="outlined"
           />
         </DialogContent>
         <DialogActions>
-          <Button variant="outlined" onClick={onCancelClick}>{t ("cancelButton")}</Button>
-          <Button variant="outlined" onClick={onSubmit}>{t ('subscribeButton')}</Button>
+          <Button variant="outlined" onClick={onCancelClick}>{t ("button.cancel")}</Button>
+          <Button variant="outlined" onClick={onSubmit}>{t ('button.subscribe')}</Button>
         </DialogActions>
       </Dialog>
     </>
