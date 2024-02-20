@@ -14,12 +14,14 @@
     "@mui/icons-material": "^5.15.8",
     "@mui/material": "^5.15.7",
     "i18next": "^23.8.2",
+    "luxon": "^3.4.4",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^14.0.5"
   },
   "devDependencies": {
+    "@types/luxon": "^3.4.2",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
     "@types/react-dom": "^18",
