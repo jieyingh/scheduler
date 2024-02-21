@@ -1,0 +1,8 @@
+entry: {
+    id: String;
+    availabilities: Array;
+    taskPreferences: Array;
+    friends : Array;
+    otherRestrictions: String | null;
+    otherComments: String | null;
+}
