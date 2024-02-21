@@ -2,7 +2,7 @@
 
 -- tracks staff information
 CREATE TABLE IF NOT EXISTS staff (
-    staffID INT(6) NOT NULL,
+    staffID VARCHAR(7) NOT NULL,
     first_name VARCHAR(50),    
     last_name VARCHAR(50),
     preferred_name VARCHAR(50),
@@ -19,10 +19,10 @@ CREATE TABLE IF NOT EXISTS staff (
 CREATE TABLE IF NOT EXISTS joint_shift (
     jointShiftID INT AUTO_INCREMENT,
     joint_type SET("same_job", "same_time"),
-    staffID1 INT(6) NOT NULL,                         
-    staffID2 INT(6) NOT NULL,
-    staffID3 INT(6),
-    staffID4 INT(6),
+    staffID1 VARCHAR(7) NOT NULL,                         
+    staffID2 VARCHAR(7) NOT NULL,
+    staffID3 VARCHAR(7),
+    staffID4 VARCHAR(7),
     PRIMARY KEY (jointShiftID),
     FOREIGN KEY (staffID1) REFERENCES staff(staffID),
     FOREIGN KEY (staffID2) REFERENCES staff(staffID),
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS joint_shift (
 -- a preference, does not NEED to be fulfilled
 CREATE TABLE IF NOT EXISTS preferred_job (
     preferredJobID INT AUTO_INCREMENT,
-    staffID INT(6) NOT NULL,
+    staffID VARCHAR(7) NOT NULL,
     jobID1 INT NOT NULL,
     jobID2 INT,
     PRIMARY KEY (preferredJobID),
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS availabilities (
     availability_start DATETIME NOT NULL,
     availability_end DATETIME NOT NULL,
     preferred BOOLEAN NOT NULL,
-    staffID INT(6) NOT NULL,
+    staffID VARCHAR(7) NOT NULL,
     PRIMARY KEY (availabilityID),
     FOREIGN KEY (staffID) REFERENCES staff(staffID)
 );
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS job_restriction (
 CREATE TABLE IF NOT EXISTS assignments (
     assignmentID INT AUTO_INCREMENT,
     jobID INT,
-    staffID INT(6) NOT NULL,
+    staffID VARCHAR(7) NOT NULL,
     start_time DATETIME NOT NULL,
     end_time DATETIME NOT NULL,
     PRIMARY KEY (assignmentID),
