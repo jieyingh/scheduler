@@ -33,7 +33,8 @@ const en: Object = {
   "text.staffIDHelper" : "Please input your staff ID as it appears on the staff portal",
   "text.submitConfirmationPopUp" : "Once you submit your form, the answers can no longer be edited. <br/><br/> If you would like to be emailed a copy of your form responses, you may write it here.",
   "text.taskPref" : "If there are any restrictions you want the scheduling team to be aware of, please write them here. We will try our best to accomodate you!",
-
+  "text.staffIdError" : "Please input a valid staff ID",
+  "text.emailError" : "Please input a valid email address",
   //"tooltip.xyz": "xyz"
 
   "placeholder.generalCommentsTextField" : "Enter comments here",

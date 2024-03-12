@@ -15,7 +15,22 @@ export default function Form() {
   const [rows, setRows] = useState<ReactNode[]>([]);
   const [submitFormOpen, setSubmitFormOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [staffIdError, setStaffIdError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
+  const onStaffIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const staffId = event.target.value;
+    const isValid = /^[A-Za-z]\d{6}$/.test(staffId);
+    setStaffIdError(!isValid);
+  };
+  
+  const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const email = event.target.value;
+    setEmail(email);
+    const isValid = /^\S+@\S+\.\S+$/.test(email);
+    setEmailError(!isValid);
+  };
+  
   const addFriend = () => {
     const newFriends = [
       ...friends,
@@ -44,7 +59,7 @@ export default function Form() {
 
     setRows(newRows);
   }
-
+  
   const removeFriend = (index: number) => {
     const _friends = [...friends];
     _friends.splice(index, 1);
@@ -85,11 +100,13 @@ export default function Form() {
               label={t ('label.staffID')}
               variant="outlined"
               placeholder="P123456"
-              helperText={t ('text.staffIDHelper')}
+              helperText={staffIdError ? t('text.staffIdError') : t('text.staffIDHelper')}
+              error={staffIdError}
               fullWidth
               InputProps={{
                 sx: {borderRadius: '8px'},
               }}
+              onChange={onStaffIdChange}
             />
           </div>
 
@@ -130,7 +147,8 @@ export default function Form() {
             <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.exhibitionHall')} />
             <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.patrolling')} />
             <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.events')} />
-            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.registration')} />            </FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked/>} label={t('label.registration')} />            
+            </FormGroup>
           </div>
 
           {/* GENERAL SECTION */}
@@ -166,7 +184,7 @@ export default function Form() {
 
           {/* SUBMIT CONTROLS */}
           <span className="w-full flex flex-row-reverse">
-            <Button variant="outlined" onClick={onSubmitClick}>
+            <Button variant="outlined" onClick={onSubmitClick} disabled={staffIdError}>
               { t ('button.submit')}
             </Button>
           </span>
@@ -189,6 +207,9 @@ export default function Form() {
             type="email"
             fullWidth
             variant="outlined"
+            helperText={emailError ? t('text.emailError') : ''}
+            error={emailError}
+            onChange={onEmailChange}
           />
         </DialogContent>
         <DialogActions>
