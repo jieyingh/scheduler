@@ -48,13 +48,6 @@ export default function Form() {
     setRows(newRows);
   }
 
-<<<<<<< Updated upstream
-=======
-  // const handleChange = (e : any) => {
-  //   console.log(e.target.value);
-  //   setId(e.target.value)
-  // }
->>>>>>> Stashed changes
 
   const removeFriend = (index: number) => {
     const _friends = [...friends];
